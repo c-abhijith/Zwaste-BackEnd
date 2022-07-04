@@ -14,6 +14,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 # import cloudinary.api
 import os
 from pathlib import Path
+from tkinter import ALL
+from decouple import config
 
 from datetime import timedelta
 
@@ -31,7 +33,8 @@ SECRET_KEY = 'django-insecure-r4a!+#2*a)y&#ohv!xh)69paw44%rg5rc^5msv3kidq9xs^^jm
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
+
 
 
 # Application definition
@@ -199,9 +202,7 @@ SIMPLE_JWT = {
 
 CORS_ALLOW_ALL_ORIGINS = True
 
-CORS_ORIGIN_WHITELIST=(
-    'http://localhost:3000',
-)
+# CORS_ORIGIN_WHITELIST= ALL
 
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': 'nills',
